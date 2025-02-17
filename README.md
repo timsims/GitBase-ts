@@ -1,4 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GitBase-ts
+
+This project is a TypeScript reconstruction of [GitBase](https://github.com/qiayue/GitBase). You can find this project at [https://github.com/timsims/GitBase-ts](https://github.com/timsims/GitBase-ts).
+
+GitBase-ts is an enhanced, type-safe version of the original GitBase - an open-source dynamic website solution without a traditional database, built with Next.js, Tailwind CSS, and Shadcn/UI. It leverages GitHub as a content management system, providing a seamless way to create and manage website content.
+
+![GitBase](https://toimg.xyz/file/5aa892c8e8385232fcdf3.png)
+
+## Features
+
+* **Database-free Architecture**: Utilizes GitHub for content storage and management
+* **Dynamic Content**: Renders content dynamically using Next.js server-side rendering
+* **Markdown Support**: Write your content in Markdown format for easy editing and version control
+* **Admin Interface**: Built-in admin panel for content management
+* **Responsive Design**: Fully responsive design using Tailwind CSS
+* **SEO Friendly**: Optimized for search engines with dynamic metadata
+* **Type-Safe APIs**: All API endpoints and data structures are fully typed
+* **Easy Deployment**: Simple deployment process to Vercel
 
 ## Getting Started
 
