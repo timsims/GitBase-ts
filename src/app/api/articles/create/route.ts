@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Octokit } from '@octokit/rest'
 import matter from 'gray-matter'
 import { Article } from '@/lib/types'
+import { verifyToken } from '@/lib/auth'
 
 interface CreateArticleRequest {
   title: string
@@ -47,6 +48,15 @@ function validateGithubConfig(): string | null {
 export async function POST(
   request: NextRequest
 ): Promise<NextResponse<CreateArticleResponse>> {
+  // Check authentication
+  const token = request.cookies.get('auth_token')?.value
+  if (!token || !(await verifyToken(token))) {
+    return NextResponse.json(
+      { success: false, error: 'Unauthorized' },
+      { status: 401 }
+    )
+  }
+
   const configError = validateGithubConfig()
   if (configError) {
     console.error(configError)

@@ -22,7 +22,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<LoginResp
     }
 
     if (password === process.env.ACCESS_PASSWORD) {
-      const token = createToken()
+      const token = await createToken()
 
       const response = NextResponse.json(
         { message: 'Login successful' },
